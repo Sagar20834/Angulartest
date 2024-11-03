@@ -30,7 +30,8 @@ export class LoginComponent {
           next: (response) => {
             console.log('User logged in successfully @@');
             this.error = '';
-            this.router.navigate(['/dashboard']); // Redirect to dashboard or appropriate page
+            console.log(response);
+            alert('Logged in Successfully'); // Redirect to dashboard or appropriate page
           },
           error: (error) => {
             this.error = 'Login failed. Check your credentials.';
