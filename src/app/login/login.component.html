@@ -1,9 +1,9 @@
-<div class="flex items-center justify-center min-h-screen bg-gray-100">
+<div class="flex items-center justify-center min-h-screen bg-gray-100 p-2">
   <div class="bg-white shadow-md rounded-lg p-8 max-w-md w-full">
     <h2 class="text-2xl font-semibold text-center mb-6">Login</h2>
     <form (ngSubmit)="onLogin()" #loginForm="ngForm" class="space-y-4">
       <div class="flex items-center space-x-4">
-        <label for="username" class="w-24 text-gray-700 font-medium"
+        <label for="username" class="max-w-24 text-gray-700 font-medium"
           >Username:</label
         >
         <input
@@ -12,12 +12,12 @@
           name="username"
           #usernameInput="ngModel"
           required
-          class="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow"
+          class="flex-1 px-4 py-2 w-1/2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow"
           placeholder="user@gmail.com"
         />
       </div>
       <div class="flex items-center space-x-4">
-        <label for="password" class="w-24 text-gray-700 font-medium"
+        <label for="password" class="max-w-24 text-gray-700 font-medium"
           >Password:</label
         >
         <input
@@ -26,7 +26,7 @@
           name="password"
           #passwordInput="ngModel"
           required
-          class="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow"
+          class="flex-1 px-4 w-1/2 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow"
           placeholder="Enter your password"
         />
       </div>
