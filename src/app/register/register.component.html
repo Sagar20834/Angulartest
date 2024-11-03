@@ -1,0 +1,50 @@
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="bg-white shadow-md rounded-lg p-8 max-w-md w-full">
+    <h2 class="text-2xl font-semibold text-center mb-6">Register</h2>
+    <form (ngSubmit)="onRegister()" #registerForm="ngForm" class="space-y-4">
+      <div class="flex items-center space-x-4">
+        <label for="username" class="w-24 text-gray-700 font-medium"
+          >Username:</label
+        >
+        <input
+          type="email"
+          [(ngModel)]="username"
+          name="username"
+          #usernameInput="ngModel"
+          required
+          class="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow"
+          placeholder="user@gmail.com"
+        />
+      </div>
+      <div class="flex items-center space-x-4">
+        <label for="password" class="w-24 text-gray-700 font-medium"
+          >Password:</label
+        >
+        <input
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          #passwordInput="ngModel"
+          required
+          class="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow"
+          placeholder="Enter your password"
+        />
+      </div>
+      <button
+        type="submit"
+        class="w-1/2 mx-auto bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
+      >
+        Register
+      </button>
+      <div *ngIf="error" class="text-red-500 mt-4 text-center">{{ error }}</div>
+    </form>
+    <div class="text-center mt-4">
+      <p class="text-gray-600">
+        Already have an account?
+        <a href="/login" class="text-blue-600 hover:text-blue-700 underline"
+          >Login here</a
+        >
+      </p>
+    </div>
+  </div>
+</div>
