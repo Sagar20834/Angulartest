@@ -25,18 +25,20 @@ export class RegisterComponent {
       const payload = { username: this.username, password: this.password };
 
       // Send a POST request to the backend
-      this.http.post('http://localhost:3000/register', payload).subscribe({
-        next: (response) => {
-          console.log('User registered successfully');
-          this.error = '';
-          this.router.navigate(['/login']);
-          // Optionally, navigate to login or clear the form
-        },
-        error: (error) => {
-          this.error = 'Registration failed. Try again.!!';
-          console.error(error);
-        },
-      });
+      this.http
+        .post('https://angulartestbackend.onrender.com/register', payload)
+        .subscribe({
+          next: (response) => {
+            console.log('User registered successfully');
+            this.error = '';
+            this.router.navigate(['/login']);
+            // Optionally, navigate to login or clear the form
+          },
+          error: (error) => {
+            this.error = 'Registration failed. Try again.!!';
+            console.error(error);
+          },
+        });
     } else {
       this.error = 'Please fill in both fields';
     }

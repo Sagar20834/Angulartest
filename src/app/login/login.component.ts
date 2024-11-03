@@ -24,17 +24,19 @@ export class LoginComponent {
       const payload = { username: this.username, password: this.password };
 
       // Send a POST request to the backend
-      this.http.post('http://localhost:3000/login', payload).subscribe({
-        next: (response) => {
-          console.log('User logged in successfully @@');
-          this.error = '';
-          this.router.navigate(['/dashboard']); // Redirect to dashboard or appropriate page
-        },
-        error: (error) => {
-          this.error = 'Login failed. Check your credentials.';
-          console.error(error);
-        },
-      });
+      this.http
+        .post('https://angulartestbackend.onrender.com/login', payload)
+        .subscribe({
+          next: (response) => {
+            console.log('User logged in successfully @@');
+            this.error = '';
+            this.router.navigate(['/dashboard']); // Redirect to dashboard or appropriate page
+          },
+          error: (error) => {
+            this.error = 'Login failed. Check your credentials.';
+            console.error(error);
+          },
+        });
     } else {
       this.error = 'Please fill in both fields';
     }
